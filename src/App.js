@@ -7,6 +7,8 @@ import ItemsListPage from './pages/ItemsListPage';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import LoginSignupPage from './pages/LoginSignupPage';
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route exact path='/' component={HomePage}/>
           <Route path='/shop' component={ShopPage}/>
           <Route path='/login' component={LoginSignupPage}/>
+          <Route path='/usersignup' component={SignupPage}/>
+          <Route path='/userlogin' component={LoginPage}/>
         </div>
     </Router>
   );
