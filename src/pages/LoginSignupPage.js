@@ -35,11 +35,11 @@ const LoginSignupPage = () => {
             <div className=" mt-10 flex items-center justify-center gap-x-6 ">
               <a
                 href="/userlogin"
-                className="pb-10  rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="pb-10  rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white hover:text-yellow-200"
               >
                 Login
               </a>
-              <a href="/usersignup" className="pb-8 text-sm font-semibold leading-6 text-white">
+              <a href="/usersignup" className="pb-8 text-sm font-semibold leading-6 text-white hover:text-yellow-200">
                 Sign up <span aria-hidden="true">→</span>
               </a>
             </div>
