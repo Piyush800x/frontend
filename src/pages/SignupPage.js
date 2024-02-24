@@ -1,6 +1,7 @@
 import Navbar2 from '../components/Navbar2'
 import React, { useState, useEffect, Component }  from 'react';
 import axios from 'axios';
+import { Button } from 'flowbite-react';
 
 
 // WORKING
@@ -40,8 +41,9 @@ class SignupPage extends Component  {
         })
     }
 
-
-    handleSubmit = (e) => {
+    // WORKING DO NOT TOUCH
+    handleSubmit = async (e) => {
+        e.preventDefault();
         const user = {
             username: this.state.username, 
             email: this.state.email, 
@@ -55,7 +57,7 @@ class SignupPage extends Component  {
         };
         
         console.log(user);
-        axios.post('http://127.0.0.1:8000/api/register/', user, customConfig).then(
+        await axios.post('http://127.0.0.1:8000/api/register/', user, customConfig).then(
             res => {
                 console.log(res);
                 console.log(res.data);
@@ -79,29 +81,6 @@ class SignupPage extends Component  {
         })
     }
 
-    sendPost = async () => {
-        const user = {
-            username: this.state.username, 
-            email: this.state.email, 
-            password: this.state.password,
-            password2: this.state.password2
-        };
-
-
-        const rawResponse = await fetch('http://127.0.0.1:8000/api/register/', {
-            method: 'POST', 
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({user})
-        })
-
-        const content = await rawResponse.json();
-
-        console.log(content);
-    };
-
     render() {
         return (
             <section className="bg-gray-50 dark:bg-gray-900">
@@ -116,7 +95,7 @@ class SignupPage extends Component  {
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                                 Create account
                             </h1>
-                            <form className="space-y-4 md:space-y-6" onSubmit={this.sendPost}>
+                            <form className="space-y-4 md:space-y-6" onSubmit={this.handleSubmit}>
                                 <div>
                                     <label for="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Username</label>
                                     <input type="username" name="username" value={this.state.username} onChange={this.handleUsernameChange} id="username" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username_@.123" required=""/>
@@ -141,8 +120,9 @@ class SignupPage extends Component  {
                                         <label for="terms" className="font-light text-gray-500 dark:text-gray-300">I accept the <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
                                     </div>
                                 </div>
-                                {/* <Button  className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create</Button> */}
-                                <button href="" type="submit" className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                                {/* <Button type='button'  className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create</Button> */}
+                                <button href="" type="input" className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                                {/* <input type='submit' className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"/> */}
                                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                                     Already have an account? <a href="/userlogin" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                                 </p>

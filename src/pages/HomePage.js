@@ -3,6 +3,7 @@ import Navbar2 from '../components/Navbar2';
 import ItemsListPage from './ItemsListPage';
 import { Button } from 'flowbite-react';
 import Quote from '../components/Quote';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
         </div>
         <Quote/>
       </div>
+      <Footer/>
     </div>
   )
 }
