@@ -1,8 +1,8 @@
 import Navbar2 from '../components/Navbar2'
 import React, { useState, useEffect, Component }  from 'react';
 import axios from 'axios';
-import { Button } from 'flowbite-react';
-
+// import { Button } from 'flowbite-react';
+import {Redirect} from 'react-router-dom';
 
 // WORKING
 class SignupPage extends Component  {
@@ -78,6 +78,8 @@ class SignupPage extends Component  {
                 console.error('Error:', error.message);
             }
             console.error('Config:', error.config);
+        }).then(() => {
+            <Redirect to='/'/>
         })
     }
 
@@ -121,7 +123,7 @@ class SignupPage extends Component  {
                                     </div>
                                 </div>
                                 {/* <Button type='button'  className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create</Button> */}
-                                <button href="" type="input" className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                                <button href="/" type="input" className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
                                 {/* <input type='submit' className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"/> */}
                                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                                     Already have an account? <a href="/userlogin" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
