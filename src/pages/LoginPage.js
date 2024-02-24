@@ -1,12 +1,15 @@
 import React from 'react'
 import Navbar2 from '../components/Navbar2'
+import { useState } from 'react'
+import { jwtDecode } from 'jwt-decode'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 const LoginPage = () => {
-    const user = {
-        username: '',
-        password: ''
-    }
+    localStorage.getItem('authTokens')
+    let [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null);
+    let [user, setUser] = useState(localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')): null);
 
+    const history = useHistory()
 
     let loginData = async (e) => {
         e.preventDefault();
@@ -19,6 +22,12 @@ const LoginPage = () => {
         })
         let data = await response.json()
         console.log(data);
+        if (response.status === 200) {
+            setAuthTokens(data)
+            setUser(jwtDecode(data.access))
+            localStorage.setItem('authTokens', JSON.stringify(data))
+            history.push('/')
+        }
     }
 
   return (
