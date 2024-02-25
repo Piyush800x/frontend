@@ -1,35 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar2 from '../components/Navbar2'
-import { useState } from 'react'
-import { jwtDecode } from 'jwt-decode'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import AuthContext from '../context/AuthContext'
 
 const LoginPage = () => {
-    localStorage.getItem('authTokens')
-    let [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null);
-    let [user, setUser] = useState(localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')): null);
-
-    const history = useHistory()
-
-    let loginData = async (e) => {
-        e.preventDefault();
-        let response = await fetch('http://127.0.0.1:8000/api/token/', {
-            method: "POST", 
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify({'username': e.target.username.value, 'password': e.target.password.value})
-        })
-        let data = await response.json()
-        console.log(data);
-        if (response.status === 200) {
-            setAuthTokens(data)
-            setUser(jwtDecode(data.access))
-            localStorage.setItem('authTokens', JSON.stringify(data))
-            history.push('/')
-        }
-    }
-
+    let {loginData} = useContext(AuthContext)
   return (
     <div>
         <section class="bg-gray-50 dark:bg-gray-900">

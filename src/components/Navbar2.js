@@ -1,14 +1,21 @@
 import { Button, Navbar } from 'flowbite-react';
+import { useContext } from 'react';
+import AuthContext from '../context/AuthContext';
 
 function Component() {
+  let {user, logoutUser} = useContext(AuthContext)
+
   return (
     <Navbar fluid rounded>
       <Navbar.Brand href="/">
-        
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">DeepOcean</span>
       </Navbar.Brand>
       <div className="flex  md:order-2 ">
-        <Button href='/login'>Get started</Button>
+        {user ? (
+          <Button onClick={logoutUser}>Logout</Button>  
+        ): (
+          <Button href='/login'>Get started</Button>
+        )}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

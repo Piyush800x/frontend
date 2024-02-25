@@ -1,16 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Navbar2 from '../components/Navbar2';
 import ItemsListPage from './ItemsListPage';
 import { Button } from 'flowbite-react';
 import Quote from '../components/Quote';
 import Footer from '../components/Footer';
+import AuthContext from '../context/AuthContext';
 
 const HomePage = () => {
+  let {user} = useContext(AuthContext)
+  console.log("USER ", user);
   return (
     <div>
       <Navbar2/>
       <div className='block bg-blue-100 fill-current font-body '>
-        <h1 className='w-full bg-emerald-500 text-xl hover:font-medium'>Deep dive into Ocean</h1>
+        <h1 className='w-full bg-emerald-500 text-xl hover:font-medium'>Hello {user && user.username}</h1>
         <h1 className='pt-20 pb-2 h24 w48 text-4xl'>Popular products</h1>
         <h3 className='opacity-40 hover:opacity-100'>— — — — — — — — — — — — — — — — — — — —</h3>
         <ItemsListPage/>

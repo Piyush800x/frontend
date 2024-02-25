@@ -11,18 +11,21 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import ContactPage from './pages/ContactPage';
 import NewsLetterPage from './pages/NewsLetterPage';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
     <Router>
         <div className="App">
-          <Route exact path='/' component={HomePage}/>
-          <Route path='/shop' component={ShopPage}/>
-          <Route path='/login' component={LoginSignupPage}/>
-          <Route path='/usersignup' component={SignupPage}/>
-          <Route path='/userlogin' component={LoginPage}/>
-          <Route path='/contact' component={ContactPage}/>
-          <Route path='/newsletter' component={NewsLetterPage}/>
+          <AuthProvider>
+            <Route exact path='/' component={HomePage}/>
+            <Route path='/shop' component={ShopPage}/>
+            <Route path='/login' component={LoginSignupPage}/>
+            <Route path='/usersignup' component={SignupPage}/>
+            <Route path='/userlogin' component={LoginPage}/>
+            <Route path='/contact' component={ContactPage}/>
+            <Route path='/newsletter' component={NewsLetterPage}/>
+          </AuthProvider>
         </div>
     </Router>
   );
