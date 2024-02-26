@@ -12,7 +12,7 @@ function Component() {
       </Navbar.Brand>
       <div className="flex  md:order-2 ">
         {user ? (
-          <Button onClick={logoutUser}>Logout</Button>  
+          <Button onClick={logoutUser} href='/login'>Logout</Button>  
         ): (
           <Button href='/login'>Get started</Button>
         )}

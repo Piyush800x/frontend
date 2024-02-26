@@ -12,14 +12,14 @@ const ItemsListPage = () => {
     let get_products = async () => {
         let response = await fetch("http://127.0.0.1:8000/api/products")
         let data = await response.json()
-        console.log(data);
-        setProduct(data)
+        let small = data.slice(0, 3)
+        console.log(small);
+        setProduct(small)
     }
     
     // get_products()
   return (
-    <div className='flex justify-evenly pb-10 overflow-x-auto sm:justify-evenly'>
-      
+    <div className='flex  justify-center pb-10 overflow-x-auto'>
       {products.map((product, index) => (
         // <Items product={product} index={index}/>
         <Items key={index} product={product}/>
@@ -29,8 +29,3 @@ const ItemsListPage = () => {
 }
 
 export default ItemsListPage
-// export const ScrollItemsListPage = () => {
-//   <ReactSmartScroller>
-//     <ItemsListPage/>
-//   </ReactSmartScroller>
-// }

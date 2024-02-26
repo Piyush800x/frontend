@@ -9,6 +9,7 @@ export const AuthProvider = ({children}) => {
   localStorage.getItem('authTokens')
   let [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null);
   let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')): null);
+  let [loading, setLoading] = useState(true)
 
   const history = useHistory()
 
@@ -37,12 +38,42 @@ export const AuthProvider = ({children}) => {
     localStorage.removeItem('authTokens')
     history.push('/')
   }
+  // Update token once every 4 mins
+  let updateToken = async () => {
+    console.log("UPDATE TOKEN CALLED");
+    let response = await fetch('http://127.0.0.1:8000/api/token/refresh/', {
+            method: "POST", 
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({'refresh': authTokens.refresh})
+      })
+    let data = await response.json()
+    if (response.status === 200)  {
+      setAuthTokens(data)
+      setUser(jwtDecode(data.access))
+      localStorage.setItem('authTokens', JSON.stringify(data))
+    }
+    else {
+      logoutUser()
+    }
+  }
 
   let contextData = {
     user: user,
     loginData: loginData,
     logoutUser: logoutUser
   }
+
+  useEffect(() => {
+    let fourMins = 1000 * 60 * 4
+    let interval = setInterval(() => {
+      if (authTokens) {
+        updateToken()
+      }
+    }, fourMins)
+    return () => clearInterval(interval)
+  }, [authTokens, loading])
 
   return(
     <AuthContext.Provider value={contextData}>
