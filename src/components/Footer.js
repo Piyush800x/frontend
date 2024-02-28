@@ -12,7 +12,7 @@ function Component() {
             name="DeepOcean"
           />
           <FooterLinkGroup>
-            <FooterLink href="#">About</FooterLink>
+            <FooterLink href="/about">About</FooterLink>
             <FooterLink href="/newsletter">NewsLetter</FooterLink>
             <FooterLink href="/contact">Contact</FooterLink>
           </FooterLinkGroup>

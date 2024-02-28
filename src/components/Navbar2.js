@@ -21,8 +21,8 @@ function Component() {
       <Navbar.Collapse>
         <Navbar.Link href="/">Home</Navbar.Link>
         <Navbar.Link href="/shop">Shop</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
+        
+        <Navbar.Link href="/about">About</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

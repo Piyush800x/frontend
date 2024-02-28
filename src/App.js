@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage';
 import ContactPage from './pages/ContactPage';
 import NewsLetterPage from './pages/NewsLetterPage';
 import { AuthProvider } from './context/AuthContext';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/userlogin' component={LoginPage}/>
             <Route path='/contact' component={ContactPage}/>
             <Route path='/newsletter' component={NewsLetterPage}/>
+            <Route path='/about' component={AboutPage}/>
           </AuthProvider>
         </div>
     </Router>
