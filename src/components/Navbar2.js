@@ -14,7 +14,7 @@ function Component() {
         {user ? (
           <Button onClick={logoutUser} href='/login'>Logout</Button>  
         ): (
-          <Button href='/login'>Get started</Button>
+          <Button href='/signup'>Get started</Button>
         )}
         <Navbar.Toggle />
       </div>

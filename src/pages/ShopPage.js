@@ -31,7 +31,7 @@ const ShopPage = () => {
         <p className='text-xl font-normal'>Set up your free account today or contact us to learn more.</p>
       </div>
       <div className='bg-sky-200 flex flex-wrap justify-center gap-5 font-["montserrat"] pt-5 pb-5'>
-        <button class="inline-flex items-center rounded-3xl bg-indigo-600 px-3 py-2 text-xl font-normal text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><a className='pt-2 pb-2 pl-4 pr-4' href='/usersignup'>Create Account</a></button>
+        <button class="inline-flex items-center rounded-3xl bg-indigo-600 px-3 py-2 text-xl font-normal text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><a className='pt-2 pb-2 pl-4 pr-4' href='/signup'>Create Account</a></button>
         <button class="inline-flex items-center rounded-3xl bg-indigo-600 px-3 py-2 text-xl font-normal text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><a className='pt-2 pb-2 pl-4 pr-4' href='/contact'>Contact Us</a></button>
       </div>
       <Footer/>

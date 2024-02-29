@@ -21,9 +21,9 @@ function App() {
           <AuthProvider>
             <Route exact path='/' component={HomePage}/>
             <Route path='/shop' component={ShopPage}/>
-            <Route path='/login' component={LoginSignupPage}/>
-            <Route path='/usersignup' component={SignupPage}/>
-            <Route path='/userlogin' component={LoginPage}/>
+            <Route path='/extras' component={LoginSignupPage}/>
+            <Route path='/signup' component={SignupPage}/>
+            <Route path='/login' component={LoginPage}/>
             <Route path='/contact' component={ContactPage}/>
             <Route path='/newsletter' component={NewsLetterPage}/>
             <Route path='/about' component={AboutPage}/>
