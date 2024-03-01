@@ -1,11 +1,13 @@
 import React, {useContext} from 'react'
 import Navbar2 from '../components/Navbar2';
 import ItemsListPage from './ItemsListPage';
+import FlowerListPage from './FlowerListPage';
 import { Button } from 'flowbite-react';
 import Quote from '../components/Quote';
 import Footer from '../components/Footer';
 import AuthContext from '../context/AuthContext';
 import home_bg from "../assets/home_bg.webp"; // Fix this
+import Flowers from '../components/Flowers';
 
 const HomePage = () => {
   let {user} = useContext(AuthContext)
@@ -18,7 +20,12 @@ const HomePage = () => {
           <h1 className='w-full bg-lime-300 text-xl hover:font-medium'>Hello {user && user.username}</h1>
           <h1 className='pt-20 pb-2 h24 w48 text-4xl'>Popular products</h1>
           <h3 className='opacity-40 hover:opacity-100'>— — — — — — — — — — — — — — — — — — — —</h3>
-          <ItemsListPage/>
+          <FlowerListPage/>
+          {/* <div className='flex  justify-center pb-10 overflow-x-auto'>
+            <Flowers/>
+            <Flowers/>
+            <Flowers/>
+          </div> */}
         </div>
         <div className='bg-lime-100'>
           <h1 className='pt-8 pb-2 h24 w48 text-4xl'>99.99%</h1>

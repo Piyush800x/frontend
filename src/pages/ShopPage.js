@@ -3,6 +3,7 @@ import Navbar2 from '../components/Navbar2'
 import ProductsList from '../components/ProductsList'
 import Footer from '../components/Footer'
 import shared_cpu from "../assets/shared_cpu.svg"
+import FlowerList from '../components/FlowerList'
 
 
 const ShopPage = () => {
@@ -24,7 +25,7 @@ const ShopPage = () => {
         <p className='text-xl font-normal pb-6'>based on demand in a multi-tenant environment</p>
       </div>
       <div className='bg-yellow-300'>
-        <ProductsList/>
+        <FlowerList/>
       </div>
       <div className='bg-sky-200 font-["montserrat"] justify-center'>
         <h1 className='pt-10 pb-4 text-2xl font-medium'>Ready to get started or have questions?</h1>
