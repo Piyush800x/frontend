@@ -28,9 +28,9 @@ const HomePage = () => {
           </div> */}
         </div>
         <div className='bg-lime-100'>
-          <h1 className='pt-8 pb-2 h24 w48 text-4xl'>99.99%</h1>
-          <p className='pt-1 pb-2 h24 w48 text-l'>Uptime SLA for instances</p>
-          <h1 className='pt-10 pb-2 h24 w48 text-4xl'>Start building today..</h1>
+          <h1 className='pt-8 pb-2 h24 w48 text-4xl'>100%</h1>
+          <p className='pt-1 pb-2 h24 w48 text-l'>Genuine</p>
+          <h1 className='pt-10 pb-2 h24 w48 text-4xl'>Start buying today..</h1>
           <div className='flex flex-wrap gap-2 justify-center pt-4 pb-4'>
             <Button outline gradientDuoTone="greenToBlue" size="xl" href='/signup'>Sign up to get started</Button>
           </div>

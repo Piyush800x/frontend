@@ -6,9 +6,9 @@ function Component() {
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <FooterBrand
-            href="https://flowbite.com"
+            href="/"
             src="https://flowbite.com/docs/images/logo.svg"
-            alt="Flowbite Logo"
+            alt="Logo"
             name="DeepOcean"
           />
           <FooterLinkGroup>

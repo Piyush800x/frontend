@@ -9,8 +9,7 @@ const NewsLetter = () => {
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
-              dolore.
+            Nostrud loves football everywhere, unless someone wants to gain administry of Nostrud. Two times they fell in pain.
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -40,7 +39,7 @@ const NewsLetter = () => {
               </div>
               <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Non laboris consequat cupidatat laborum magna. Eiusmod non irure cupidatat duis commodo amet.
+              The result of work is not the desire for great work. In the same way, he does not want to rush to the advantage of the family.
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -49,7 +48,7 @@ const NewsLetter = () => {
               </div>
               <dt className="mt-4 font-semibold text-white">No spam</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.
+              Offices, except in any case, do not come out of the house. They fell in love with each other.
               </dd>
             </div>
           </dl>

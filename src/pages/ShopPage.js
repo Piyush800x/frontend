@@ -11,18 +11,18 @@ const ShopPage = () => {
     <div>
       <Navbar2/>
       <div className='bg-lime-100 text-2xl font-medium font-["montserrat"] font-medium '>
-        <h2 className='pt-20 pb-1 tracking-wider'>Deep dive into the Ocean of CPUs</h2>
+        <h2 className='pt-20 pb-1 tracking-wider'>Deep dive into the Ocean of Flowers</h2>
         <ul>
-          <li className='text-sm pb-2'>✔ 24/7 Customer support</li>
+          <li className='text-sm pb-2'>✔ On time delivery</li>
         </ul>
       </div>
       <div className='pb-10 flex justify-center'>
         <img style={{width: 200}} src={shared_cpu} alt='shared_cpu'/>
       </div>
       <div className='font-["montserrat"] justify-center'>
-        <h1 className='pb-6 text-4xl font-semibold '>Shared CPU</h1>
-        <p className='text-xl font-normal'>Efficient resource utilization and cost savings through the allocation of CPU resources</p>
-        <p className='text-xl font-normal pb-6'>based on demand in a multi-tenant environment</p>
+        <h1 className='pb-6 text-4xl font-semibold '>Fresh Flowers</h1>
+        <p className='text-xl font-normal'>Fresh flowers: nature's vibrant gift, infusing spaces with positivity, color, </p>
+        <p className='text-xl font-normal pb-6'>and a gentle reminder of life's beauty.</p>
       </div>
       <div className='bg-yellow-300'>
         <FlowerList/>
